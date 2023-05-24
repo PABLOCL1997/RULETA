@@ -1,5 +1,5 @@
-@extends('layouts.admin_ruleta')
-@section('contenidoRuleta') 
+@extends('layouts.admin')
+@section('contenido') 
 <!--<div class="p-4 code-to-copy" style="display: flex; align-items: center; justify-content: center;">
     <form id="form1" class="row g-3">
        
@@ -222,7 +222,7 @@
                     </div>
                     <div class="col-12 text-center" style="margin-top: -20px;">
                         <div id="canvasContainer2" class="col-12 text-center" style="">
-                            <input id="bigButton" style="background-color: #E30613;" class="btn-block btn-lg btn btn-success" onclick="girarRuleta(); this.disabled=true;" value="Girarrr" type="button"/>
+                            <input id="bigButton" style="background-color: #E30613;" class="btn-block btn-lg btn btn-success" onclick="girarRuleta(); this.disabled=true;" value="Girar" type="button"/>
                         </div>
                     </div>
                 </div>
