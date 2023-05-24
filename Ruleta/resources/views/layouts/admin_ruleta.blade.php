@@ -4,7 +4,13 @@
   
 <!-- Mirrored from prium.github.io/phoenix/v1.11.0/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 May 2023 20:00:49 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-
+<head>
+  <meta charset="utf-8">
+  <title>Admin</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link href="css/sweetalert.css" rel="stylesheet" />
+  @yield('head')
+</head>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,17 +24,17 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/logo-sofia-negro.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/logo-sofia-negro.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/logo-sofia-negro.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/logo-sofia-negro.png') }}">
-    <link rel="manifest" href="{{ asset('assets/img/favicons/manifest.json') }}">
-    <meta name="msapplication-TileImage" content="{{ asset('img/logo-sofia-negro.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo-sofia-negro.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo-sofia-negro.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo-sofia-negro.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo-sofia-negro.png">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="img/logo-sofia-negro.png">
     <meta name="theme-color" content="#ffffff">
-    <script src="{{ asset('vendors/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('vendors/simplebar/simplebar.min.js') }}"></script>
-    <script src="{{ asset('assets/js/config.js') }}"></script>
-    <script src="{{ asset('vendors/choices/choices.min.js') }}"></script>
+    <script src="vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="vendors/simplebar/simplebar.min.js"></script>
+    <script src="assets/js/config.js"></script>
+
     <!-- ===============================================-->
     <!--    Librerias Scrip Ruleta-->
     
@@ -43,17 +49,16 @@
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
-    <link href="{{ asset('vendors/choices/choices.min.css') }}" rel="stylesheet" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <link href="{{ asset('vendors/flatpickr/flatpickr.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendors/simplebar/simplebar.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/line.css') }}">
-    <link href="{{ asset('assets/css/theme-rtl.min.css') }}" type="text/css" rel="stylesheet" id="style-rtl">
-    <link href="{{ asset('assets/css/theme.min.css') }}" type="text/css" rel="stylesheet" id="style-default">
-    <link href="{{ asset('assets/css/user-rtl.min.css') }}" type="text/css" rel="stylesheet" id="user-style-rtl">
-    <link href="{{ asset('assets/css/user.min.css') }}" type="text/css" rel="stylesheet" id="user-style-default">
+    <link href="vendors/simplebar/simplebar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/line.css">
+    <link href="assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
+    <link href="assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+    <link href="assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
+    <link href="assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
     <script>
       var phoenixIsRTL = window.config.config.phoenixIsRTL;
       if (phoenixIsRTL) {
@@ -128,7 +133,7 @@
               <a class="navbar-brand me-1 me-sm-3" href="http://localhost:8000">
                 <div class="d-flex align-items-center">
                   <div class="d-flex align-items-center">
-                    <img class="logo-text ms-2 d-none d-sm-block" src="{{ asset('img/logo-sofia.jpg') }}" alt="phoenix" width="80" />
+                    <img class="logo-text ms-2 d-none d-sm-block" src="img/logo-sofia.jpg" alt="phoenix" width="80" />
                     <!--<p class="logo-text ms-2 d-none d-sm-block">sofia</p>-->
                   </div>
                 </div>
@@ -143,7 +148,7 @@
                   
                   <!--<div class="text-center">
                     <div class="avatar avatar-xl ">
-                      <img class="rounded-circle " src="{{ asset('img/user.jpg') }}" alt="" />
+                      <img class="rounded-circle " src="img/user.jpg" alt="" />
                     </div>
                     <h6 class="mt-2 text-black">Jerry Seinfield</h6>
                   </div>-->
@@ -160,7 +165,7 @@
               </li>
               <li class="nav-item dropdown"><a class="nav-link lh-1 pe-0" id="navbarDropdownUser" href="#!" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                   <div class="avatar avatar-l ">
-                    <img class="rounded-circle " src="{{ asset('img/user.jpg') }}" alt="" />
+                    <img class="rounded-circle " src="img/user.jpg" alt="" />
                   </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border border-300" aria-labelledby="navbarDropdownUser">
@@ -168,7 +173,7 @@
                     <div class="card-body p-0">
                       <div class="text-center pt-4 pb-3">
                         <div class="avatar avatar-xl ">
-                          <img class="rounded-circle " src="{{ asset('img/user.jpg') }}" alt="" />
+                          <img class="rounded-circle " src="img/user.jpg" alt="" />
                         </div>
                         <h6 class="mt-2 text-black">Jerry Seinfield</h6>
                       </div>
@@ -209,7 +214,7 @@
                           <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative read border-bottom">
                             <div class="d-flex align-items-center justify-content-between position-relative">
                               <div class="d-flex">
-                                <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/30.webp') }}" alt="" /></div>
+                                <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/30.webp" alt="" /></div>
                                 <div class="flex-1 me-sm-3">
                                   <h4 class="fs--1 text-black">Jessie Samson</h4>
                                   <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>💬</span>Mentioned you in a comment.<span class="ms-2 text-400 fw-bold fs--2">10m</span></p>
@@ -241,7 +246,7 @@
                           <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                             <div class="d-flex align-items-center justify-content-between position-relative">
                               <div class="d-flex">
-                                <div class="avatar avatar-m status-online me-3"><img class="rounded-circle avatar-placeholder" src="{{ asset('assets/img/team/40x40/avatar.webp') }}" alt="" /></div>
+                                <div class="avatar avatar-m status-online me-3"><img class="rounded-circle avatar-placeholder" src="assets/img/team/40x40/avatar.webp" alt="" /></div>
                                 <div class="flex-1 me-sm-3">
                                   <h4 class="fs--1 text-black">Jessie Samson</h4>
                                   <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👍</span>Liked your comment.<span class="ms-2 text-400 fw-bold fs--2">1h</span></p>
@@ -258,7 +263,7 @@
                           <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                             <div class="d-flex align-items-center justify-content-between position-relative">
                               <div class="d-flex">
-                                <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/57.webp') }}" alt="" /></div>
+                                <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/57.webp" alt="" /></div>
                                 <div class="flex-1 me-sm-3">
                                   <h4 class="fs--1 text-black">Kiera Anderson</h4>
                                   <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>💬</span>Mentioned you in a comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -273,7 +278,7 @@
                           <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                             <div class="d-flex align-items-center justify-content-between position-relative">
                               <div class="d-flex">
-                                <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/59.webp') }}" alt="" /></div>
+                                <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/59.webp" alt="" /></div>
                                 <div class="flex-1 me-sm-3">
                                   <h4 class="fs--1 text-black">Herman Carter</h4>
                                   <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👤</span>Tagged you in a comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -288,7 +293,7 @@
                           <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative read ">
                             <div class="d-flex align-items-center justify-content-between position-relative">
                               <div class="d-flex">
-                                <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/58.webp') }}" alt="" /></div>
+                                <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/58.webp" alt="" /></div>
                                 <div class="flex-1 me-sm-3">
                                   <h4 class="fs--1 text-black">Benjamin Button</h4>
                                   <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👍</span>Liked your comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -325,46 +330,46 @@
                   <div class="card bg-white position-relative border-0">
                     <div class="card-body pt-3 px-3 pb-0 overflow-auto scrollbar" style="height: 20rem;">
                       <div class="row text-center align-items-center gx-0 gy-0">
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/behance.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/behance.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Behance</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-cloud.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-cloud.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Cloud</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/slack.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/slack.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Slack</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/gitlab.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/gitlab.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Gitlab</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/bitbucket.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/bitbucket.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">BitBucket</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-drive.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-drive.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Drive</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/trello.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/trello.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Trello</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/figma.webp') }}" alt="" width="20" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/figma.webp" alt="" width="20" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Figma</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/twitter.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/twitter.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Twitter</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/pinterest.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/pinterest.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Pinterest</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/ln.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/ln.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Linkedin</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-maps.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-maps.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Maps</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-photos.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-photos.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Photos</p>
                           </a></div>
-                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/spotify.webp') }}" alt="" width="30" />
+                        <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/spotify.webp" alt="" width="30" />
                             <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Spotify</p>
                           </a></div>
                       </div>
@@ -378,7 +383,7 @@
                     <div class="card-body p-0">
                       <div class="text-center pt-4 pb-3">
                         <div class="avatar avatar-xl ">
-                          <img class="rounded-circle " src="{{ asset('assets/img/team/72x72/57.webp') }}" alt="" />
+                          <img class="rounded-circle " src="assets/img/team/72x72/57.webp" alt="" />
                         </div>
                         <h6 class="mt-2 text-black">Jerry Seinfield</h6>
                       </div>
@@ -413,7 +418,7 @@
             <button class="btn navbar-toggler navbar-toggler-humburger-icon hover-bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopCollapse" aria-controls="navbarTopCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
             <a class="navbar-brand me-1 me-sm-3" href="index.html">
               <div class="d-flex align-items-center">
-                <div class="d-flex align-items-center"><img src="{{ asset('assets/img/icons/logo.png') }}" alt="phoenix" width="27" />
+                <div class="d-flex align-items-center"><img src="assets/img/icons/logo.png" alt="phoenix" width="27" />
                   <p class="logo-text ms-2 d-none d-sm-block">phoenix</p>
                 </div>
               </div>
@@ -892,7 +897,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative read border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/30.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/30.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Jessie Samson</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>💬</span>Mentioned you in a comment.<span class="ms-2 text-400 fw-bold fs--2">10m</span></p>
@@ -924,7 +929,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle avatar-placeholder" src="{{ asset('assets/img/team/40x40/avatar.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle avatar-placeholder" src="assets/img/team/40x40/avatar.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Jessie Samson</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👍</span>Liked your comment.<span class="ms-2 text-400 fw-bold fs--2">1h</span></p>
@@ -941,7 +946,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/57.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/57.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Kiera Anderson</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>💬</span>Mentioned you in a comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -956,7 +961,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/59.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/59.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Herman Carter</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👤</span>Tagged you in a comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -971,7 +976,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative read ">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/58.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/58.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Benjamin Button</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👍</span>Liked your comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -1008,46 +1013,46 @@
                 <div class="card bg-white position-relative border-0">
                   <div class="card-body pt-3 px-3 pb-0 overflow-auto scrollbar" style="height: 20rem;">
                     <div class="row text-center align-items-center gx-0 gy-0">
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/behance.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/behance.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Behance</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-cloud.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-cloud.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Cloud</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/slack.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/slack.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Slack</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/gitlab.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/gitlab.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Gitlab</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/bitbucket.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/bitbucket.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">BitBucket</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-drive.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-drive.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Drive</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/trello.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/trello.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Trello</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/figma.webp') }}" alt="" width="20" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/figma.webp" alt="" width="20" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Figma</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/twitter.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/twitter.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Twitter</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/pinterest.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/pinterest.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Pinterest</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/ln.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/ln.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Linkedin</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-maps.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-maps.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Maps</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-photos.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-photos.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Photos</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/spotify.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/spotify.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Spotify</p>
                         </a></div>
                     </div>
@@ -1057,7 +1062,7 @@
             </li>
             <li class="nav-item dropdown"><a class="nav-link lh-1 pe-0" id="navbarDropdownUser" href="#!" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-l ">
-                  <img class="rounded-circle " src="{{ asset('assets/img/team/40x40/57.webp') }}" alt="" />
+                  <img class="rounded-circle " src="assets/img/team/40x40/57.webp" alt="" />
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border border-300" aria-labelledby="navbarDropdownUser">
@@ -1065,7 +1070,7 @@
                   <div class="card-body p-0">
                     <div class="text-center pt-4 pb-3">
                       <div class="avatar avatar-xl ">
-                        <img class="rounded-circle " src="{{ asset('assets/img/team/72x72/57.webp') }}" alt="" />
+                        <img class="rounded-circle " src="assets/img/team/72x72/57.webp" alt="" />
                       </div>
                       <h6 class="mt-2 text-black">Jerry Seinfield</h6>
                     </div>
@@ -1581,7 +1586,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative read border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/30.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/30.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Jessie Samson</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>💬</span>Mentioned you in a comment.<span class="ms-2 text-400 fw-bold fs--2">10m</span></p>
@@ -1613,7 +1618,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle avatar-placeholder" src="{{ asset('assets/img/team/40x40/avatar.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle avatar-placeholder" src="assets/img/team/40x40/avatar.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Jessie Samson</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👍</span>Liked your comment.<span class="ms-2 text-400 fw-bold fs--2">1h</span></p>
@@ -1630,7 +1635,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/57.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/57.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Kiera Anderson</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>💬</span>Mentioned you in a comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -1645,7 +1650,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/59.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/59.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Herman Carter</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👤</span>Tagged you in a comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -1660,7 +1665,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative read ">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/58.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/58.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Benjamin Button</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👍</span>Liked your comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -1697,46 +1702,46 @@
                 <div class="card bg-white position-relative border-0">
                   <div class="card-body pt-3 px-3 pb-0 overflow-auto scrollbar" style="height: 20rem;">
                     <div class="row text-center align-items-center gx-0 gy-0">
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/behance.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/behance.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Behance</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-cloud.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-cloud.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Cloud</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/slack.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/slack.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Slack</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/gitlab.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/gitlab.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Gitlab</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/bitbucket.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/bitbucket.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">BitBucket</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-drive.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-drive.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Drive</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/trello.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/trello.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Trello</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/figma.webp') }}" alt="" width="20" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/figma.webp" alt="" width="20" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Figma</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/twitter.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/twitter.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Twitter</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/pinterest.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/pinterest.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Pinterest</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/ln.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/ln.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Linkedin</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-maps.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-maps.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Maps</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-photos.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-photos.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Photos</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/spotify.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/spotify.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Spotify</p>
                         </a></div>
                     </div>
@@ -1750,7 +1755,7 @@
                   <div class="card-body p-0">
                     <div class="text-center pt-4 pb-3">
                       <div class="avatar avatar-xl ">
-                        <img class="rounded-circle " src="{{ asset('assets/img/team/72x72/57.webp') }}" alt="" />
+                        <img class="rounded-circle " src="assets/img/team/72x72/57.webp" alt="" />
                       </div>
                       <h6 class="mt-2 text-black">Jerry Seinfield</h6>
                     </div>
@@ -1784,7 +1789,7 @@
             <button class="btn navbar-toggler navbar-toggler-humburger-icon hover-bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
             <a class="navbar-brand me-1 me-sm-3" href="index.html">
               <div class="d-flex align-items-center">
-                <div class="d-flex align-items-center"><img src="{{ asset('assets/img/icons/logo.png') }}" alt="phoenix" width="27" />
+                <div class="d-flex align-items-center"><img src="assets/img/icons/logo.png" alt="phoenix" width="27" />
                   <p class="logo-text ms-2 d-none d-sm-block">phoenix</p>
                 </div>
               </div>
@@ -2272,7 +2277,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative read border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/30.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/30.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Jessie Samson</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>💬</span>Mentioned you in a comment.<span class="ms-2 text-400 fw-bold fs--2">10m</span></p>
@@ -2304,7 +2309,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle avatar-placeholder" src="{{ asset('assets/img/team/40x40/avatar.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle avatar-placeholder" src="assets/img/team/40x40/avatar.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Jessie Samson</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👍</span>Liked your comment.<span class="ms-2 text-400 fw-bold fs--2">1h</span></p>
@@ -2321,7 +2326,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/57.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/57.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Kiera Anderson</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>💬</span>Mentioned you in a comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -2336,7 +2341,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/59.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/59.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Herman Carter</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👤</span>Tagged you in a comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -2351,7 +2356,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative read ">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/58.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/58.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Benjamin Button</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👍</span>Liked your comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -2388,46 +2393,46 @@
                 <div class="card bg-white position-relative border-0">
                   <div class="card-body pt-3 px-3 pb-0 overflow-auto scrollbar" style="height: 20rem;">
                     <div class="row text-center align-items-center gx-0 gy-0">
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/behance.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/behance.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Behance</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-cloud.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-cloud.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Cloud</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/slack.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/slack.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Slack</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/gitlab.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/gitlab.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Gitlab</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/bitbucket.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/bitbucket.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">BitBucket</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-drive.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-drive.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Drive</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/trello.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/trello.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Trello</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/figma.webp') }}" alt="" width="20" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/figma.webp" alt="" width="20" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Figma</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/twitter.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/twitter.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Twitter</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/pinterest.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/pinterest.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Pinterest</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/ln.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/ln.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Linkedin</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-maps.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-maps.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Maps</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-photos.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-photos.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Photos</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/spotify.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/spotify.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Spotify</p>
                         </a></div>
                     </div>
@@ -2437,7 +2442,7 @@
             </li>
             <li class="nav-item dropdown"><a class="nav-link lh-1 pe-0" id="navbarDropdownUser" href="#!" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-l ">
-                  <img class="rounded-circle " src="{{ asset('assets/img/team/40x40/57.webp') }}" alt="" />
+                  <img class="rounded-circle " src="assets/img/team/40x40/57.webp" alt="" />
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border border-300" aria-labelledby="navbarDropdownUser">
@@ -2445,7 +2450,7 @@
                   <div class="card-body p-0">
                     <div class="text-center pt-4 pb-3">
                       <div class="avatar avatar-xl ">
-                        <img class="rounded-circle " src="{{ asset('assets/img/team/72x72/57.webp') }}" alt="" />
+                        <img class="rounded-circle " src="assets/img/team/72x72/57.webp" alt="" />
                       </div>
                       <h6 class="mt-2 text-black">Jerry Seinfield</h6>
                     </div>
@@ -2961,7 +2966,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative read border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/30.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/30.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Jessie Samson</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>💬</span>Mentioned you in a comment.<span class="ms-2 text-400 fw-bold fs--2">10m</span></p>
@@ -2993,7 +2998,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle avatar-placeholder" src="{{ asset('assets/img/team/40x40/avatar.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle avatar-placeholder" src="assets/img/team/40x40/avatar.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Jessie Samson</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👍</span>Liked your comment.<span class="ms-2 text-400 fw-bold fs--2">1h</span></p>
@@ -3010,7 +3015,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/57.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/57.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Kiera Anderson</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>💬</span>Mentioned you in a comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -3025,7 +3030,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative unread border-bottom">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/59.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/59.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Herman Carter</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👤</span>Tagged you in a comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -3040,7 +3045,7 @@
                         <div class="px-2 px-sm-3 py-3 border-300 notification-card position-relative read ">
                           <div class="d-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex">
-                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('assets/img/team/40x40/58.webp') }}" alt="" /></div>
+                              <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/58.webp" alt="" /></div>
                               <div class="flex-1 me-sm-3">
                                 <h4 class="fs--1 text-black">Benjamin Button</h4>
                                 <p class="fs--1 text-1000 mb-2 mb-sm-3 fw-normal"><span class='me-1 fs--2'>👍</span>Liked your comment.<span class="ms-2 text-400 fw-bold fs--2"></span></p>
@@ -3077,46 +3082,46 @@
                 <div class="card bg-white position-relative border-0">
                   <div class="card-body pt-3 px-3 pb-0 overflow-auto scrollbar" style="height: 20rem;">
                     <div class="row text-center align-items-center gx-0 gy-0">
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/behance.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/behance.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Behance</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-cloud.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-cloud.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Cloud</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/slack.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/slack.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Slack</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/gitlab.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/gitlab.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Gitlab</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/bitbucket.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/bitbucket.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">BitBucket</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-drive.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-drive.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Drive</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/trello.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/trello.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Trello</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/figma.webp') }}" alt="" width="20" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/figma.webp" alt="" width="20" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Figma</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/twitter.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/twitter.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Twitter</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/pinterest.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/pinterest.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Pinterest</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/ln.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/ln.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Linkedin</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-maps.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-maps.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Maps</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/google-photos.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/google-photos.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Photos</p>
                         </a></div>
-                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="{{ asset('assets/img/nav-icons/spotify.webp') }}" alt="" width="30" />
+                      <div class="col-4"><a class="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3" href="#!"><img src="assets/img/nav-icons/spotify.webp" alt="" width="30" />
                           <p class="mb-0 text-black text-truncate fs--2 mt-1 pt-1">Spotify</p>
                         </a></div>
                     </div>
@@ -3130,7 +3135,7 @@
                   <div class="card-body p-0">
                     <div class="text-center pt-4 pb-3">
                       <div class="avatar avatar-xl ">
-                        <img class="rounded-circle " src="{{ asset('assets/img/team/72x72/57.webp') }}" alt="" />
+                        <img class="rounded-circle " src="assets/img/team/72x72/57.webp" alt="" />
                       </div>
                       <h6 class="mt-2 text-black">Jerry Seinfield</h6>
                     </div>
@@ -3188,14 +3193,14 @@
                         <hr class="text-200 my-0" />
                         <h6 class="dropdown-header text-1000 fs--1 border-bottom border-200 py-2 lh-sm">Products</h6>
                         <div class="py-2"><a class="dropdown-item py-2 d-flex align-items-center" href="apps/e-commerce/landing/product-details.html">
-                            <div class="file-thumbnail me-2"><img class="h-100 w-100 fit-cover rounded-3" src="{{ asset('assets/img/products/60x60/3.png') }}" alt="" /></div>
+                            <div class="file-thumbnail me-2"><img class="h-100 w-100 fit-cover rounded-3" src="assets/img/products/60x60/3.png" alt="" /></div>
                             <div class="flex-1">
                               <h6 class="mb-0 text-1000 title">MacBook Air - 13″</h6>
                               <p class="fs--2 mb-0 d-flex text-700"><span class="fw-medium text-600">8GB Memory - 1.6GHz - 128GB Storage</span></p>
                             </div>
                           </a>
                           <a class="dropdown-item py-2 d-flex align-items-center" href="apps/e-commerce/landing/product-details.html">
-                            <div class="file-thumbnail me-2"><img class="img-fluid" src="{{ asset('assets/img/products/60x60/3.png') }}" alt="" /></div>
+                            <div class="file-thumbnail me-2"><img class="img-fluid" src="assets/img/products/60x60/3.png" alt="" /></div>
                             <div class="flex-1">
                               <h6 class="mb-0 text-1000 title">MacBook Pro - 13″</h6>
                               <p class="fs--2 mb-0 d-flex text-700"><span class="fw-medium text-600 ms-2">30 Sep at 12:30 PM</span></p>
@@ -3237,7 +3242,7 @@
                         <h6 class="dropdown-header text-1000 fs--1 border-bottom border-200 py-2 lh-sm">Members</h6>
                         <div class="py-2"><a class="dropdown-item py-2 d-flex align-items-center" href="pages/members.html">
                             <div class="avatar avatar-l status-online  me-2 text-900">
-                              <img class="rounded-circle " src="{{ asset('assets/img/team/40x40/10.webp') }}" alt="" />
+                              <img class="rounded-circle " src="assets/img/team/40x40/10.webp" alt="" />
                             </div>
                             <div class="flex-1">
                               <h6 class="mb-0 text-1000 title">Carry Anna</h6>
@@ -3246,7 +3251,7 @@
                           </a>
                           <a class="dropdown-item py-2 d-flex align-items-center" href="pages/members.html">
                             <div class="avatar avatar-l  me-2 text-900">
-                              <img class="rounded-circle " src="{{ asset('assets/img/team/40x40/12.webp') }}" alt="" />
+                              <img class="rounded-circle " src="assets/img/team/40x40/12.webp" alt="" />
                             </div>
                             <div class="flex-1">
                               <h6 class="mb-0 text-1000 title">John Smith</h6>
@@ -3362,12 +3367,11 @@
           }
         </script>
         <div class="content">
-          <!--<div class="pb-5">-->
-          <div class="mt-5">
+          <div class="pb-5">
           
             <div class="row g-4">
             <!-- Aqui va todo el codigo -->
-            @yield('contenido')
+            @yield('contenidoRuleta')
 
             </div>
           </div>
@@ -3398,8 +3402,8 @@
         <div class="setting-panel-item mt-0">
           <h5 class="setting-panel-item-title">Esquema de colores</h5>
           <div class="row gx-2">
-            <div class="col-6"><input class="btn-check" id="themeSwitcherLight" name="theme-color" type="radio" value="light" data-theme-control="phoenixTheme" /><label class="btn d-inline-block btn-navbar-style fs--1" for="themeSwitcherLight"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype mb-0" src="{{ asset('assets/img/generic/default-light.png') }}" alt=""/></span><span class="label-text">Light</span></label></div>
-            <div class="col-6"><input class="btn-check" id="themeSwitcherDark" name="theme-color" type="radio" value="dark" data-theme-control="phoenixTheme" /><label class="btn d-inline-block btn-navbar-style fs--1" for="themeSwitcherDark"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype mb-0" src="{{ asset('assets/img/generic/default-dark.png') }}" alt=""/></span><span class="label-text"> Dark</span></label></div>
+            <div class="col-6"><input class="btn-check" id="themeSwitcherLight" name="theme-color" type="radio" value="light" data-theme-control="phoenixTheme" /><label class="btn d-inline-block btn-navbar-style fs--1" for="themeSwitcherLight"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype mb-0" src="assets/img/generic/default-light.png" alt=""/></span><span class="label-text">Light</span></label></div>
+            <div class="col-6"><input class="btn-check" id="themeSwitcherDark" name="theme-color" type="radio" value="dark" data-theme-control="phoenixTheme" /><label class="btn d-inline-block btn-navbar-style fs--1" for="themeSwitcherDark"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype mb-0" src="assets/img/generic/default-dark.png" alt=""/></span><span class="label-text"> Dark</span></label></div>
           </div>
         </div>
         <!--<div class="setting-panel-item">
@@ -3413,8 +3417,8 @@
         <div class="setting-panel-item">
           <h5 class="setting-panel-item-title">Apariencia de barra de navegación vertical</h5>
           <div class="row gx-2">
-            <div class="col-6"><input class="btn-check" id="navbar-style-default" type="radio" name="config.name" value="default" data-theme-control="phoenixNavbarVerticalStyle" /><label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-default"> <img class="img-fluid img-prototype d-dark-none" src="{{ asset('assets/img/generic/default-light.png') }}" alt="" /><img class="img-fluid img-prototype d-light-none" src="{{ asset('assets/img/generic/default-dark.png') }}" alt="" /><span class="label-text d-dark-none"> Default</span><span class="label-text d-light-none">Default</span></label></div>
-            <div class="col-6"><input class="btn-check" id="navbar-style-dark" type="radio" name="config.name" value="darker" data-theme-control="phoenixNavbarVerticalStyle" /><label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-dark"> <img class="img-fluid img-prototype d-dark-none" src="{{ asset('assets/img/generic/vertical-darker.png') }}" alt="" /><img class="img-fluid img-prototype d-light-none" src="{{ asset('assets/img/generic/vertical-lighter.png') }}" alt="" /><span class="label-text d-dark-none"> Darker</span><span class="label-text d-light-none">Lighter</span></label></div>
+            <div class="col-6"><input class="btn-check" id="navbar-style-default" type="radio" name="config.name" value="default" data-theme-control="phoenixNavbarVerticalStyle" /><label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-default"> <img class="img-fluid img-prototype d-dark-none" src="assets/img/generic/default-light.png" alt="" /><img class="img-fluid img-prototype d-light-none" src="assets/img/generic/default-dark.png" alt="" /><span class="label-text d-dark-none"> Default</span><span class="label-text d-light-none">Default</span></label></div>
+            <div class="col-6"><input class="btn-check" id="navbar-style-dark" type="radio" name="config.name" value="darker" data-theme-control="phoenixNavbarVerticalStyle" /><label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-dark"> <img class="img-fluid img-prototype d-dark-none" src="assets/img/generic/vertical-darker.png" alt="" /><img class="img-fluid img-prototype d-light-none" src="assets/img/generic/vertical-lighter.png" alt="" /><span class="label-text d-dark-none"> Darker</span><span class="label-text d-light-none">Lighter</span></label></div>
           </div>
         </div>
        <!-- <div class="setting-panel-item">
@@ -3436,23 +3440,22 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="{{ asset('vendors/popper/popper.min.js') }}"></script>
+    <script src="vendors/popper/popper.min.js"></script>
     <script src="{{ asset('vendors/bootstrap/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('vendors/anchorjs/anchor.min.js') }}"></script>
-    <script src="{{ asset('vendors/is/is.min.js') }}"></script>
-    <script src="{{ asset('vendors/fontawesome/all.min.js') }}"></script>
-    <script src="{{ asset('vendors/lodash/lodash.min.js') }}"></script>
-    <script src="{{ asset('js/polyfill.min58be.js?features=window.scroll') }}"></script>
-    <script src="{{ asset('/assets/js/phoenix.js') }}"></script>
-    <script src="{{ asset('vendors/list.js/list.min.js') }}"></script>
-    <script src="{{ asset('vendors/feather-icons/feather.min.js') }}"></script>
-    <script src="{{ asset('vendors/dayjs/dayjs.min.js') }}"></script>
-    <script src="{{ asset('vendors/prism/prism.js') }}"></script>
-    
-    <script src="{{ asset('vendors/echarts/echarts.min.js') }}"></script>
-    <script src="{{ asset('js/index.min.js') }}"></script>
+    <script src="vendors/anchorjs/anchor.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="vendors/lodash/lodash.min.js"></script>
+    <script src="js/polyfill.min58be.js?features=window.scroll"></script>
+    <script src="vendors/list.js/list.min.js"></script>
+    <script src="vendors/feather-icons/feather.min.js"></script>
+    <script src="vendors/dayjs/dayjs.min.js"></script>
+    <script src="vendors/prism/prism.js"></script>
+    <script src="assets/js/phoenix.js"></script>
+    <script src="vendors/echarts/echarts.min.js"></script>
+    <script src="js/index.min.js"></script>
     <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbaQGvhe7Af-uOMJz68NWHnO34UjjE7Lo&amp;callback=revenueMapInit" async></script>-->
-    <script src="{{ asset('assets/js/ecommerce-dashboard.js') }}"></script>
+    <script src="assets/js/ecommerce-dashboard.js"></script>
   </body>
 
 
