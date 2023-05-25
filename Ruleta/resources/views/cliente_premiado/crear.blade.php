@@ -47,29 +47,30 @@
                                 <div class="invalid-feedback">Ingrese su telefono</div>
                             </div>
 
+                            
                             <div class="col-xl-3 col-lg-6 col-md-6">
                                 <label class="form-label" for="inputZip">Fecha Nacimiento</label>
-                                <input type="date" class="form-control" data-provider="flatpickr" name="FECHA_NACIMIENTO"
-                                    value="" id="dtFechaNac" placeholder="dd/mm/yyyy" required
-                                    data-options='{"disableMobile":true,"dateFormat":"d/m/Y"}'>
+                                <input class="form-control datetimepicker" name="FECHA_NACIMIENTO" id="dtFechaNac"
+                                    type="date" placeholder="dd/mm/yyyy" required
+                                    data-options='{"disableMobile":true,"dateFormat":"d/m/Y"}' />
                                 <div class="invalid-feedback">Selecciona una fecha</div>
                             </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6">
+                            <!--<div class="col-xl-3 col-lg-6 col-md-6">
                                 <label class="form-label" for="inputState">Ciudad</label>
                                 <select class="form-select" name="CIUDAD" id="cbCiudad" data-choices="data-choices"
                                     data-options='{"removeItemButton":true,"placeholder":true}' required
                                     aria-label="select example">
                                     <option selected disabled value="">Selecciona una opción</option>
                                     @foreach ($laDatosView['ciudad'] as $item)
-                                        <option value="{{ $item->NOMBRE }}">{{ $item->NOMBRE }}</option>
+                                        <option value="{{ $item->ID_CIUDAD }}">{{ $item->NOMBRE }}</option>
                                     @endforeach
                                 </select>
-                                <!--<div class="invalid-feedback">Selecciona una ciudad</div>-->
-                            </div>
+                                <div class="invalid-feedback">Selecciona una ciudad</div>
+                            </div>-->
 
                             <div class="col-xl-3 col-lg-6 col-md-6">
                                 <label class="form-label" for="inputState">Premio</label>
-                                <select class="form-select" name="PREMIO" id="cbPremio" data-choices="data-choices"
+                                <select class="form-select" name="ID_PREMIO" id="cbPremio" data-choices="data-choices"
                                     data-options='{"removeItemButton":true,"placeholder":true}' required
                                     aria-label="select example">
                                     <option selected="selected" value="">Selecciona una opción</option>

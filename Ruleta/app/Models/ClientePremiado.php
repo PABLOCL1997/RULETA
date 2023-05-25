@@ -17,7 +17,7 @@ class ClientePremiado extends Model
     	'APELLIDOS',
     	'CARNET_IDENTIDAD',
     	'TELEFONO',
-    	'CIUDAD',
+    	'ID_CIUDAD',
     	'FECHA_NACIMIENTO',
     	'NRO_TICKET',
     	'ID_MERCADO',

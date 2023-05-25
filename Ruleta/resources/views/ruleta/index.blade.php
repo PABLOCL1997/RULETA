@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin_ruleta')
 @section('contenido')
 <div class="p-4 code-to-copy" style="display: flex; align-items: center; justify-content: center;">
     <form id="form1" class="row g-3">
