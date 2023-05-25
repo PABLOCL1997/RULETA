@@ -42,7 +42,7 @@ class ClientePremiadoController extends Controller
         try {
        
             FacadesDB::beginTransaction();
-            $loClientePremiado = new ClientePremiado();
+            /*$loClientePremiado = new ClientePremiado();
             $loClientePremiado->NOMBRES = $request->NOMBRES;
             $loClientePremiado->APELLIDOS = $request->APELLIDOS;
             $loClientePremiado->CARNET_IDENTIDAD = $request->CARNET_IDENTIDAD;
@@ -54,12 +54,12 @@ class ClientePremiadoController extends Controller
             $loClientePremiado->ID_PREMIO = 1;
             $loClientePremiado->USER_CREACION = "admin";
             $loClientePremiado->FECHA_CREACION = Carbon::now('America/La_Paz');
-            $loClientePremiado->save();
+            $loClientePremiado->save();*/
             FacadesDB::commit();
         } catch (\Throwable $th) {
             FacadesDB::rollback();
         }
         //return Index();
-        return Redirect::to('cliente_premiado'); 
+        return Redirect::to('ruleta'); 
     }
 }

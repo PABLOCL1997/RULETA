@@ -34,6 +34,8 @@
     
     <link href="{{ asset('css/sweetalert.css') }}" rel="stylesheet" />
 
+    <link href="{{ asset('../../../../cdn.jsdelivr.net/npm/select2%404.1.0-rc.0/dist/css/select2.min.css') }}" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -210,7 +212,7 @@
                         </li>
                         <li class="nav-item">
                           <!-- label-->
-                          <a class="nav-link label-1" href="ruleta" role="button" data-bs-toggle="" aria-expanded="false">
+                          <a class="nav-link label-1" href="/ruleta" role="button" data-bs-toggle="" aria-expanded="false">
                             <div class="d-flex align-items-center">
                                 <span class="nav-item d-block">
                                     <span data-feather="home"></span>
@@ -254,7 +256,7 @@
                         </li>
                         <li class="nav-item">
                           <!-- label-->
-                          <a class="nav-link label-1" href="usuario" role="button" data-bs-toggle="" aria-expanded="false">
+                          <a class="nav-link label-1" href="/usuario" role="button" data-bs-toggle="" aria-expanded="false">
                               <div class="d-flex align-items-center">
                                   <span class="nav-item d-block">
                                       <span data-feather="users"></span>
@@ -264,7 +266,7 @@
                                   </span>
                               </div>
                           </a><!-- parent pages-->
-                          <a class="nav-link label-1" href="cliente_premiado" role="button" data-bs-toggle="" aria-expanded="false">
+                          <a class="nav-link label-1" href="/cliente_premiado" role="button" data-bs-toggle="" aria-expanded="false">
                             <div class="d-flex align-items-center">
                                 <span class="nav-item d-block">
                                     <span data-feather="help-circle"></span>
@@ -1183,6 +1185,18 @@
 
     <!-- Dashboard init -->
     <script src="{{ asset('assets/js/pages/dashboard-ecommerce.init.js') }}"></script>
+
+    
+    <!--jquery cdn-->
+    <script src="{{ asset('code.jquery.com/jquery-3.6.0.min.js') }}" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--select2 cdn-->
+    <script src="{{ asset('../../../../cdn.jsdelivr.net/npm/select2%404.1.0-rc.0/dist/js/select2.min.js') }}"></script>
+
+    <script src="{{ asset('assets/js/pages/select2.init.js') }}"></script>
+
+    <!-- prismjs plugin -->
+    <script src="{{ asset('assets/libs/prismjs/prism.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/form-validation.init.js') }}"></script>
 
     <!-- App js -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
