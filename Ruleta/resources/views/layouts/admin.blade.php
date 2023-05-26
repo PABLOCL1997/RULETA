@@ -174,7 +174,7 @@
                       </div>
                     </div>
                     <div class="card-footer p-3 border-top">
-                      <div class="px-3"> <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="#!"> <span class="me-2" data-feather="log-out"> </span>Cerrar Sesión</a></div>
+                      <div class="px-3"> <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="{{asset('logout')}}"> <span class="me-2" data-feather="log-out"> </span>Cerrar Sesión</a></div>
                       <div class="my-2 text-center fw-bold fs--2 text-600"></div>
                     </div>
                   </div>
