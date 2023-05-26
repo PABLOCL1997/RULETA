@@ -47,7 +47,7 @@
                                 <div class="invalid-feedback">Ingrese su telefono</div>
                             </div>
 
-                            
+
                             <div class="col-xl-3 col-lg-6 col-md-6">
                                 <label class="form-label" for="inputZip">Fecha Nacimiento</label>
                                 <input class="form-control datetimepicker" name="FECHA_NACIMIENTO" id="dtFechaNac"
@@ -55,47 +55,32 @@
                                     data-options='{"disableMobile":true,"dateFormat":"d/m/Y"}' />
                                 <div class="invalid-feedback">Selecciona una fecha</div>
                             </div>
-                            <!--<div class="col-xl-3 col-lg-6 col-md-6">
-                                <label class="form-label" for="inputState">Ciudad</label>
-                                <select class="form-select" name="CIUDAD" id="cbCiudad" data-choices="data-choices"
-                                    data-options='{"removeItemButton":true,"placeholder":true}' required
-                                    aria-label="select example">
-                                    <option selected disabled value="">Selecciona una opción</option>
-                                    @foreach ($laDatosView['ciudad'] as $item)
-                                        <option value="{{ $item->ID_CIUDAD }}">{{ $item->NOMBRE }}</option>
-                                    @endforeach
-                                </select>
-                                <div class="invalid-feedback">Selecciona una ciudad</div>
-                            </div>-->
 
                             <div class="col-xl-3 col-lg-6 col-md-6">
                                 <label class="form-label" for="inputState">Premio</label>
                                 <select class="form-select" name="ID_PREMIO" id="cbPremio" data-choices="data-choices"
                                     data-options='{"removeItemButton":true,"placeholder":true}' required
                                     aria-label="select example">
-                                    <option selected="selected" value="">Selecciona una opción</option>
+                                    @if (count($laDatosView['premio']) > 1)
+                                        <option selected="selected" value="">Selecciona una opción</option>
+                                    @endif
+                                    <!--<option selected="selected" value="">Selecciona una opción</option>-->
                                     @foreach ($laDatosView['premio'] as $item)
                                         <option value="{{ $item->ID_PREMIO }}">{{ $item->NOMBRE }}</option>
                                     @endforeach
                                 </select>
-                                <div id="smsPremio" style="width: 100%; margin-top: -20px; padding-bottom: 20px; font-size: .875em; color: #f06548;" class="invalid-feedback">
+                                <div id="smsPremio"
+                                    style="width: 100%; margin-top: -20px; padding-bottom: 20px; font-size: .875em; color: #f06548;"
+                                    class="invalid-feedback">
                                     Selecciona un premio
                                 </div>
                             </div>
                         </div>
-                        <!--<button type="submit" style="background-color:#ed1c24; color:#ffffff; text-transform:uppercase;" class="btn btn-primary">
-                                    <div class="d-flex align-items-center">
-                                    <i class="fas fa-save me-2"></i>
-                                    <span>Guardar</span>
-                                    </div>
-                                </button>-->
                         <div class="form-group" id="divGuardar">
                             {{ csrf_field() }}
-                            <button class="btn btn-primary" id="txtGuardar" onclick="validarPremio();" type="submit">Guardar</button>
+                            <button class="btn btn-primary" id="txtGuardar" onclick="validarPremio();"
+                                type="submit">Guardar</button>
                             <button class="btn btn-danger" type="reset">Cancelar</button>
-                        </div>
-                        <div class="col-12" style="display: none;">
-                            <button class="btn btn-primary" onclick="prueba();" type="submit">Submit form</button>
                         </div>
                     </form>
                 </div>
@@ -104,6 +89,10 @@
     </div>
     {!! Form::close() !!}
     <script>
+        window.onload = function() {
+
+        };
+
         function validarPremio() {
             const select = document.getElementById('cbPremio');
             if (select.value === '') {

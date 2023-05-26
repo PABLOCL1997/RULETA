@@ -31,6 +31,8 @@ Route::get('ruleta','RuletaController@index');
 Route::get('usuario','UsuarioController@Create');
 
 // Cliente Premiado
-//Route::get('cliente_premiado','ClientePremiadoController@index');
-//Route::get('crear','ClientePremiadoController@Create');
+Route::post('cliente_premiado/create', 'ClientePremiadoController@create')->name('cliente_premiado.create');
 Route::resource('cliente_premiado', 'ClientePremiadoController',['as' => 'cliente_premiado']);
+//Route::post('cliente_premiado/create/{id}', 'ClientePremiadoController@create')->name('cliente_premiado.create');
+//Route::match(['get', 'post'], 'cliente_premiado/create', 'ClientePremiadoController@create')->name('cliente_premiado.create');
+//Route::resource('cliente_premiado', 'ClientePremiadoController');

@@ -29,12 +29,17 @@ class ClientePremiadoController extends Controller
         $laDatosView['cliente_premiado'] = $laPremio;
         return view('cliente_premiado/index', ['laDatosView' => $laDatosView]);
     }
-    public function Create()
+    public function Create(Request $request)
     {
-
+        $id = $request->input('ID');  // ID PREMIO ENVIADO DESDE LA RULETA
         $laDatosView = array();
         $laDatosMercado = FacadesDB::select('SELECT * FROM MERCADO m WHERE m.ESTADO = "H"');
-        $laDatosPremio = FacadesDB::select('SELECT p.* FROM MERCADO_PREMIO mp INNER JOIN PREMIO p ON p.ID_PREMIO = mp.ID_PREMIO WHERE mp.ID_MERCADO = 3 AND p.ESTADO = "H"');
+        $laDatosPremio = FacadesDB::select("SELECT p.* FROM MERCADO_PREMIO mp INNER JOIN PREMIO p ON p.ID_PREMIO = mp.ID_PREMIO 
+                                            WHERE mp.ID_MERCADO = 3 AND p.ESTADO = 'H'");
+        if ($id != null || $id > 0) {
+            $laDatosPremio = FacadesDB::select("SELECT p.* FROM MERCADO_PREMIO mp INNER JOIN PREMIO p ON p.ID_PREMIO = mp.ID_PREMIO 
+                                            WHERE mp.ID_MERCADO = 3 AND mp.ID_PREMIO = $id AND p.ESTADO = 'H'");
+        }
         $laDatosCiudad = FacadesDB::select('SELECT * FROM CIUDAD m WHERE m.ESTADO = "H"');
         $laDatosView['mercado'] = $laDatosMercado;
         $laDatosView['premio'] = $laDatosPremio;
