@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,9 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.admin');
-});
+Route::view('/', 'auth/signin')->name('/')->middleware('guest');
+Route::view('/signup', 'auth/signup')->name('signup')->middleware('guest');
+Route::view('/signin', 'auth/signin')->name('signin')->middleware('guest');
+Route::view('/admin', 'layouts/admin')->middleware('auth')->name('admin');
+Route::view('/home', 'layouts/admin')->name('home')->middleware('auth');
+
+// Auth
+Route::post('/validar-registro', [AuthController::class, 'register'])->name('validar-registro');
+Route::post('/inicia-sesion', [AuthController::class, 'login'])->name('inicia-sesion');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Ruleta
 Route::get('ruleta','RuletaController@index');
