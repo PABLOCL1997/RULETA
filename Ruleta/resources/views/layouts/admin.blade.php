@@ -90,21 +90,24 @@
               <ul class="navbar-nav flex-column" id="navbarVerticalNav">
                 <li class="nav-item">
                   <!-- label-->
+                  @if(session('id_rol')[0] === 2 || session('id_rol')[0] === 1)
                   <p class="navbar-vertical-label">ATENCION</p>
                   <hr class="navbar-vertical-line" /><!-- parent pages-->
                   <div class="nav-item-wrapper"><a class="nav-link label-1" href="/ruleta" role="button" data-bs-toggle="" aria-expanded="false">
                       <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="life-buoy"></span></span><span class="nav-link-text-wrapper"><span class="nav-link-text">RULETA</span></span></div>
                     </a></div><!-- parent pages-->
+                  @endif  
                 </li>
                 <li class="nav-item">
                   <!-- label-->
-                  <p class="navbar-vertical-label">ADMINISTRACION</p>
+                  @if( session('id_rol')[0] === 1)
+                  <p class="navbar-vertical-label">ADMINISTRACION </p>
                   <hr class="navbar-vertical-line" /><!-- parent pages-->
                   <div class="nav-item-wrapper"><a class="nav-link label-1" href="/usuario" role="button" data-bs-toggle="" aria-expanded="false">
-                      <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="users"></span></span><span class="nav-link-text-wrapper"><span class="nav-link-text">USUARIO</span></span></div>
-                    </a></div><!-- parent pages-->
+                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="users"></span></span><span class="nav-link-text-wrapper"><span class="nav-link-text">USUARIO</span></span></div>
+                  </a></div><!-- parent pages-->
                   <div class="nav-item-wrapper"><a class="nav-link label-1" href="/cliente_premiado" role="button" data-bs-toggle="" aria-expanded="false">
-                      <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="help-circle"></span></span><span class="nav-link-text-wrapper"><span class="nav-link-text">CLIENTE PREMIADO</span></span></div>
+                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="help-circle"></span></span><span class="nav-link-text-wrapper"><span class="nav-link-text">CLIENTE PREMIADO</span></span></div>
                     </a></div><!-- parent pages-->
                   <div class="nav-item-wrapper"><a class="nav-link label-1" href="pages/notifications.html" role="button" data-bs-toggle="" aria-expanded="false">
                       <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="shopping-cart"></span></span><span class="nav-link-text-wrapper"><span class="nav-link-text">MERCADO</span></span></div>
@@ -112,9 +115,10 @@
                   <div class="nav-item-wrapper"><a class="nav-link label-1" href="pages/members.html" role="button" data-bs-toggle="" aria-expanded="false">
                       <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="compass"></span></span><span class="nav-link-text-wrapper"><span class="nav-link-text">ROLES</span></span></div>
                     </a></div><!-- parent pages-->
-                  <div class="nav-item-wrapper"><a class="nav-link label-1" href="pages/timeline.html" role="button" data-bs-toggle="" aria-expanded="false">
+                    <div class="nav-item-wrapper"><a class="nav-link label-1" href="pages/timeline.html" role="button" data-bs-toggle="" aria-expanded="false">
                       <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="monitor"></span></span><span class="nav-link-text-wrapper"><span class="nav-link-text">PREMIOS</span></span></div>
                     </a></div><!-- parent pages-->
+                    @endif  
                 </li>
               </ul>
             </div>

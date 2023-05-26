@@ -13,22 +13,29 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::view('/', 'auth/signin')->name('/')->middleware('guest');
-Route::view('/signup', 'auth/signup')->name('signup')->middleware('guest');
-Route::view('/signin', 'auth/signin')->name('signin')->middleware('guest');
-Route::view('/admin', 'layouts/admin')->middleware('auth')->name('admin');
-Route::view('/home', 'layouts/admin')->name('home')->middleware('auth');
+
+Route::middleware('guest')->group(function () {
+    Route::view('/', 'auth/signin')->name('/');
+    Route::view('/signup', 'auth/signup')->name('signup');
+    Route::view('/signin', 'auth/signin')->name('signin');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::view('/admin', 'layouts/admin')->name('admin');
+    Route::view('/home', 'layouts/admin')->name('home');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+});
 
 // Auth
 Route::post('/validar-registro', [AuthController::class, 'register'])->name('validar-registro');
 Route::post('/inicia-sesion', [AuthController::class, 'login'])->name('inicia-sesion');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
 
 // Ruleta
 Route::get('ruleta','RuletaController@index');
 
 // Usuario
-Route::get('usuario','UsuarioController@Create');
+Route::get('usuario','UsuarioController@index');
 
 // Cliente Premiado
 Route::post('cliente_premiado/create', 'ClientePremiadoController@create')->name('cliente_premiado.create');
