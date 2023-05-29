@@ -50,9 +50,10 @@ class AuthController extends Controller
             $idUser = Auth::id();
             $dataUser = DB::select("SELECT u.id, u.name, u.email, u.nombres, u.apellidos, u.id_mercado, m.ID_CIUDAD as id_ciudad, u.id_rol 
                                     FROM USERS u JOIN MERCADO m ON u.ID_MERCADO = m.ID_MERCADO WHERE u.ID = $idUser");
+            $userRol = UserRol::where('id', $idUser)->first();
 
             // Guardar los datos en la sesión
-            Session::put('id_rol', $columnaData );
+            Session::put('id_rol', $userRol->id_rol);
             Session::put('user_logeado', $dataUser);
             return redirect()->intended(route('admin'));
             // return back()->with('message', 'Bienvenido');

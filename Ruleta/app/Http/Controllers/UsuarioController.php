@@ -28,9 +28,9 @@ class UsuarioController extends Controller
         $DatosView['roles'] = $queryRol;
         $DatosView['mercado'] = $queryMercado;
        
-        // $datosSesion = Session::all();
+        $datosSesion = Session::all();
         // Imprimir los datos de la sesión
-        // dump($datosSesion);
+        dump($datosSesion);
 
         return view('usuario/index', ['DatosView' => $DatosView]);
     }
