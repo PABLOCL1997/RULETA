@@ -19,6 +19,10 @@ class UsuarioController extends Controller
 
     public function index()
     {
+        $sesionRol = Session::get('id_rol');
+        if ($sesionRol != 1) {
+            return redirect()->route('ruleta');
+        }
         $DatosView = array();
         $query = FacadesDB::select('SELECT *, roles.nombre AS nombre_rol, users.estado AS estado_usuario FROM users INNER JOIN users_roles ON users.id = users_roles.id INNER JOIN roles ON users_roles.id_rol = roles.id_rol LEFT JOIN MERCADO ON users.id_mercado = MERCADO.ID_MERCADO');
         $queryRol = FacadesDB::select('SELECT * FROM roles WHERE estado = ?', ['A']);
