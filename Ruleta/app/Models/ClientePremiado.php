@@ -9,7 +9,7 @@ class ClientePremiado extends Model
 {
     use HasFactory;
     protected $table = 'CLIENTE_PREMIADO';
-    protected $primaryKey = 'ID_CLIENTE_PREMIADO';
+    protected $primaryKey = 'ID_CLIENTE_PREMIEADO';
 
     public $timestamps=false;
     protected $fillable=[
@@ -20,6 +20,7 @@ class ClientePremiado extends Model
     	'ID_CIUDAD',
     	'FECHA_NACIMIENTO',
     	'NRO_TICKET',
+		'ESTADO',
     	'ID_MERCADO',
     	'ID_PREMIO',
     	'USER_CREACION',

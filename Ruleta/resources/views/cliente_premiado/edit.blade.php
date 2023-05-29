@@ -1,49 +1,56 @@
 @extends('layouts.admin')
 @section('contenido')
-    {!! Form::open([
-        'url' => 'cliente_premiado',
-        'method' => 'POST',
-        'class' => 'needs-validation',
-        'novalidate',
-        'autocomplete' => 'off',
-        'files' => 'true',
+    {!! Form::model($laDatosView, [
+        'method' => 'PATCH',
+        'route' => ['cliente_premiado.cliente_premiado.update', $laDatosView['cliente_premiado']->ID_CLIENTE_PREMIEADO],
     ]) !!}
     {{ Form::token() }}
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col-xl-11 col-lg-12 custom-lg-1440">
             <div class="card mb-2">
-                <h4 class="p-3">Nuevo Cliente Premiado</h4>
+                <h4 class="p-3">Editar Cliente Premiado</h4>
                 <div class="p-3 code-to-copy ">
                     <form class="row g-3" novalidate>
                         <div class="row">
+                            <div class="mb-2 col-xl-3 col-lg-6 col-md-6" style="display: none;">
+                                <label class="form-label" for="inputCity">ID</label>
+                                <input class="form-control" name="ID_CLIENTE_PREMIEADO" id="txtId" type="text"
+                                    placeholder="Nro. Ticket" required
+                                    value="{{ $laDatosView['cliente_premiado']->ID_CLIENTE_PREMIEADO }}" />
+                                <div class="invalid-feedback">ID Vacio</div>
+                            </div>
                             <div class="mb-2 col-xl-3 col-lg-6 col-md-6">
                                 <label class="form-label" for="inputCity">Nro. Ticket</label>
                                 <input class="form-control" name="NRO_TICKET" id="txtNroTicket" type="text"
-                                    placeholder="Nro. Ticket" required value="" />
+                                    placeholder="Nro. Ticket" required
+                                    value="{{ $laDatosView['cliente_premiado']->NRO_TICKET }}" />
                                 <div class="invalid-feedback">Ingrese el numero de ticket</div>
                             </div>
                             <div class="mb-2 col-xl-3 col-lg-6 col-md-6">
                                 <label class="form-label" for="inputEmail4">Nombres</label>
                                 <input class="form-control" name="NOMBRES" id="txtNombres" type="text"
-                                    placeholder="Nombres" required value="" />
+                                    placeholder="Nombres" required
+                                    value="{{ $laDatosView['cliente_premiado']->NOMBRES }}" />
                                 <div class="invalid-feedback">Ingrese su nombre</div>
                             </div>
                             <div class="mb-2 col-xl-6 col-lg-6 col-md-6">
                                 <label class="form-label" for="inputPassword4">Apellidos</label>
                                 <input class="form-control" name="APELLIDOS" id="txtApellidos" required type="text"
-                                    placeholder="Apellidos" value="" />
+                                    placeholder="Apellidos" value="{{ $laDatosView['cliente_premiado']->APELLIDOS }}" />
                                 <div class="invalid-feedback">Ingrese sus Apellidos</div>
                             </div>
                             <div class="mb-2 col-xl-3 col-lg-6 col-md-6">
                                 <label class="form-label" for="inputAddress">Cedula de Identidad</label>
                                 <input class="form-control" name="CARNET_IDENTIDAD" id="txtCI" type="text"
-                                    placeholder="Cedula de Identidad" required value="" />
+                                    placeholder="Cedula de Identidad" required
+                                    value="{{ $laDatosView['cliente_premiado']->CARNET_IDENTIDAD }}" />
                                 <div class="invalid-feedback">Ingrese Cedula de Identidad</div>
                             </div>
                             <div class="mb-2 col-xl-3 col-lg-6 col-md-6">
                                 <label class="form-label" for="validationCustom02">Telefono</span></label>
                                 <input type="number" class="form-control" name="TELEFONO" id="txtTelefono"
-                                    placeholder="Telefono" required value="">
+                                    placeholder="Telefono" required
+                                    value="{{ $laDatosView['cliente_premiado']->TELEFONO }}">
                                 <div class="invalid-feedback">Ingrese su telefono</div>
                             </div>
 
@@ -51,8 +58,8 @@
                             <div class="mb-2 col-xl-3 col-lg-6 col-md-6">
                                 <label class="form-label" for="inputZip">Fecha Nacimiento</label>
                                 <input class="form-control datetimepicker" name="FECHA_NACIMIENTO" id="dtFechaNac"
-                                    type="date" placeholder="dd/mm/yyyy" required
-                                    data-options='{"disableMobile":true,"dateFormat":"d/m/Y"}' />
+                                    type="date" required
+                                    value="{{ $laDatosView['cliente_premiado']->FECHA_NACIMIENTO }}" />
                                 <div id="smsFecha" class="invalid-feedback">Selecciona una fecha</div>
                             </div>
                             @php
@@ -69,14 +76,18 @@
                                     data-options='{"removeItemButton":true,"placeholder":true,}' required
                                     aria-label="select example" {{ $estado }}>
                                     @if (count($laDatosView['premio']) > 1)
-                                        <option selected="selected" value="">Selecciona una opción</option>
+                                        <option selected="selected"
+                                            value="{{ $laDatosView['cliente_premiado']->ID_PREMIO }}">
+                                            {{ $laDatosView['nombre_premio']->NOMBRE }}</option>
                                     @endif
                                     @foreach ($laDatosView['premio'] as $item)
-                                        <option value="{{ $item->ID_PREMIO }}">{{ $item->NOMBRE }}</option>
+                                        @if ($item->ID_PREMIO != $laDatosView['cliente_premiado']->ID_PREMIO)
+                                            <option value="{{ $item->ID_PREMIO }}">{{ $item->NOMBRE }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                                 <div id="smsPremio"
-                                    style="margin-top: -20px;"
+                                    style="width: 100%; margin-top: -20px; padding-bottom: 20px; font-size: .875em; color: #f06548;"
                                     class="invalid-feedback">
                                     Selecciona un premio
                                 </div>
@@ -86,7 +97,7 @@
                             {{ csrf_field() }}
                             <button class="btn btn-primary" id="txtGuardar" onclick="validarPremio();"
                                 type="submit">Guardar</button>
-                            <a href="/cliente_premiado"><button class="btn btn-danger" type="button">Volver</button></a>
+                            <a href="/cliente_premiado"><button class="btn btn-danger">Volver</button></a>
                         </div>
                     </form>
                 </div>

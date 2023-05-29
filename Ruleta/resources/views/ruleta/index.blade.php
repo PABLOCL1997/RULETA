@@ -326,59 +326,78 @@
         }*/
         function premioGanador() {
             var premios = <?php echo json_encode($laDatosView['premio']); ?>;
-            var conteoPremios = {};
-            var limiteEntrega = {};
 
-            /* ------- Carga los arreglos conteoPremios y limiteEntrega ------ */
-            for (var i = 0; i < premios.length; i++) {
-                var premio = premios[i].NOMBRE;
-                if (conteoPremios[premio] == null) {
-                    conteoPremios[premio] = premios[i].CANTIDAD_ENTREGADO_DIARIO;
-                }
-                if (limiteEntrega[premio] == null) {
-                    limiteEntrega[premio] = premios[i].TOTAL_MAX_ENTREGA;
-                }
-            }
+            /* ------------- Obtiene los campos de la columan CANTIDAD_ENTREGADO_DIARIO --------------- */
+            var cantidades = premios.map(function(premio) {
+                return premio.CANTIDAD_ENTREGADO_DIARIO;
+            });
             
-            /* ------- Filtra los premios que estan disponibles ------ */
-            var premiosDisponibles = premios.filter(function(premio) {
-                return conteoPremios[premio.NOMBRE] < limiteEntrega[premio.NOMBRE];
-            });
+            /* ------------- Realiza la suma Total de la columna CANTIDAD_ENTREGADO_DIARIO --------------- */
+            var totalEntregado = cantidades.reduce(function(acumulador, valor) {
+                return acumulador + valor;
+            }, 0);
+            console.log(totalEntregado);
+            if (totalEntregado % 5 === 0) {
+                var premioNinguno = premios.find(function(premio) {
+                    return premio.NOMBRE === 'Ninguno';
+                });
+                if (premioNinguno) {
+                    return premioNinguno.ID_PREMIO;
+                } else {
+                    console.log('No se encontró el premio "Ninguno"');
+                }
+            }else{
+                var conteoPremios = {};
+                var limiteEntrega = {};
 
-            /* ------- Ordena los premios de mayor cantidad de premios pendientes a menor ------ */
-            premiosDisponibles.sort(function(a, b) {
-                return b.CANTIDAD_MAX_SALIDAS - a.CANTIDAD_MAX_SALIDAS;
-            });
+                /* ------- Carga los arreglos conteoPremios y limiteEntrega ------ */
+                for (var i = 0; i < premios.length; i++) {
+                    var premio = premios[i].NOMBRE;
+                    if (conteoPremios[premio] == null) {
+                        conteoPremios[premio] = premios[i].CANTIDAD_ENTREGADO_DIARIO;
+                    }
+                    if (limiteEntrega[premio] == null) {
+                        limiteEntrega[premio] = premios[i].TOTAL_MAX_ENTREGA;
+                    }
+                }
+                
+                /* ------- Filtra los premios que estan disponibles ------ */
+                var premiosDisponibles = premios.filter(function(premio) {
+                    return conteoPremios[premio.NOMBRE] < limiteEntrega[premio.NOMBRE];
+                });
 
-            var posicionActual = 0;
+                /* ------- Ordena los premios de mayor cantidad de premios pendientes a menor ------ */
+                premiosDisponibles.sort(function(a, b) {
+                    return b.CANTIDAD_MAX_SALIDAS - a.CANTIDAD_MAX_SALIDAS;
+                });
 
-            var ganador = premiosDisponibles[posicionActual];
+                var posicionActual = 0;
 
-            /* ------- Obtener un premio ganador entre los premios que tienen la misma cantidad de premios ------ */
-            var PremiosPendIguales = premiosDisponibles.filter(function(elemento) {
-                return elemento.CANTIDAD_MAX_SALIDAS === ganador.CANTIDAD_MAX_SALIDAS;
-            });
+                var ganador = premiosDisponibles[posicionActual];
 
-            var totalIguales = PremiosPendIguales.length;
-            if (totalIguales > 1) {
-                var randomIndex = Math.floor(Math.random() * totalIguales);
-                posicionActual = randomIndex;
-                ganador = premiosDisponibles[posicionActual];
-            }
+                /* ------- Obtener un premio ganador entre los premios que tienen la misma cantidad de premios ------ */
+                var PremiosPendIguales = premiosDisponibles.filter(function(elemento) {
+                    return elemento.CANTIDAD_MAX_SALIDAS === ganador.CANTIDAD_MAX_SALIDAS;
+                });
 
-
-            
-            if (ganador == null) {
-                console.log('no hay premios');
-            } else {
-                while (conteoPremios[ganador.NOMBRE] >= limiteEntrega[ganador.NOMBRE]) {
-                    posicionActual = (posicionActual + 1) % premiosDisponibles.length;
+                var totalIguales = PremiosPendIguales.length;
+                if (totalIguales > 1) {
+                    var randomIndex = Math.floor(Math.random() * totalIguales);
+                    posicionActual = randomIndex;
                     ganador = premiosDisponibles[posicionActual];
                 }
-                conteoPremios[ganador.NOMBRE]++;
-                return ganador.ID_PREMIO; // Retorna solo el ID del premio ganador
-            }
 
+                if (ganador == null) {
+                    console.log('no hay premios');
+                } else {
+                    while (conteoPremios[ganador.NOMBRE] >= limiteEntrega[ganador.NOMBRE]) {
+                        posicionActual = (posicionActual + 1) % premiosDisponibles.length;
+                        ganador = premiosDisponibles[posicionActual];
+                    }
+                    conteoPremios[ganador.NOMBRE]++;
+                    return ganador.ID_PREMIO; // Retorna solo el ID del premio ganador
+                }
+            }
         }
 
         function girarRuleta() {
