@@ -14,8 +14,8 @@
         <style>
             #canvasContainer {
                 /*background-image: url(img/logo-sofia.jpg);
-                                              background-repeat: no-repeat;
-                                              background-position: center center;*/
+                                                  background-repeat: no-repeat;
+                                                  background-position: center center;*/
                 height: auto;
                 cursor: pointer;
                 margin: 0 auto;
@@ -328,6 +328,8 @@
             var premios = <?php echo json_encode($laDatosView['premio']); ?>;
             var conteoPremios = {};
             var limiteEntrega = {};
+
+            /* ------- Carga los arreglos conteoPremios y limiteEntrega ------ */
             for (var i = 0; i < premios.length; i++) {
                 var premio = premios[i].NOMBRE;
                 if (conteoPremios[premio] == null) {
@@ -337,18 +339,35 @@
                     limiteEntrega[premio] = premios[i].TOTAL_MAX_ENTREGA;
                 }
             }
-
+            
+            /* ------- Filtra los premios que estan disponibles ------ */
             var premiosDisponibles = premios.filter(function(premio) {
                 return conteoPremios[premio.NOMBRE] < limiteEntrega[premio.NOMBRE];
             });
-            console.log(premiosDisponibles);
+
+            /* ------- Ordena los premios de mayor cantidad de premios pendientes a menor ------ */
             premiosDisponibles.sort(function(a, b) {
                 return b.CANTIDAD_MAX_SALIDAS - a.CANTIDAD_MAX_SALIDAS;
             });
-            console.log(premiosDisponibles);
 
             var posicionActual = 0;
+
             var ganador = premiosDisponibles[posicionActual];
+
+            /* ------- Obtener un premio ganador entre los premios que tienen la misma cantidad de premios ------ */
+            var PremiosPendIguales = premiosDisponibles.filter(function(elemento) {
+                return elemento.CANTIDAD_MAX_SALIDAS === ganador.CANTIDAD_MAX_SALIDAS;
+            });
+
+            var totalIguales = PremiosPendIguales.length;
+            if (totalIguales > 1) {
+                var randomIndex = Math.floor(Math.random() * totalIguales);
+                posicionActual = randomIndex;
+                ganador = premiosDisponibles[posicionActual];
+            }
+
+
+            
             if (ganador == null) {
                 console.log('no hay premios');
             } else {
@@ -367,10 +386,7 @@
             // Generar un número aleatorio entre 1 y 90 para stopAngle
             //var stopAngle = Math.floor(Math.random() * 90) + 1;
             var obtenerId = premioGanador();
-            console.log(obtenerId);
-            console.log($("#idPremio").val());
             $("#idPremio").val(obtenerId)
-            console.log($("#idPremio").val());
             var premios = <?php echo json_encode($laDatosView['premio']); ?>;
 
             var premioDeseado = obtenerId;
