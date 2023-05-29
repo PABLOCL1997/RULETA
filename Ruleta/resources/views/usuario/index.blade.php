@@ -99,7 +99,8 @@
                                                     <tr>
                                                         <td class="align-middle ps-3 ID">{{ $item->id }}</td>
                                                         <td class="align-middle ps-3 NAME">{{ $item->name }}</td>
-                                                        <td class="align-middle ps-3 EMAIL">{{ $item->email }}</td>
+                                                        <td class="align-middle ps-3 EMAIL"><a href="mailto:{{ $item->email }}" target="_blank">{{ $item->email }}</a></td>
+
                                                         <td class="align-middle ps-3 NOMBRES">{{ $item->nombres }}</td>
                                                         <td class="align-middle ps-3 APELLIDOS">{{ $item->apellidos }}</td>
                                                         <td class="align-middle ps-3 ESTADO">
@@ -109,7 +110,7 @@
                                                         <span class="badge badge-phoenix fs--2 badge-phoenix-danger"><span class="badge-label">{{ $item->estado_usuario }}</span><span class="ms-1" data-feather="package" style="height:12.8px;width:12.8px;"></span></span>
                                                         @endif
                                                         </td>
-                                                        <td class="align-middle ps-3 MERCADO">{{ $item->NOMBRE }}</td>
+                                                        <td class="align-middle ps-3 MERCADO"><span class="badge badge-phoenix fs--2 badge-phoenix-info"><span class="badge-label">{{ $item->NOMBRE }}</span><span class="ms-1" data-feather="info" style="height:12.8px;width:12.8px;"></span></span></td>
                                                         <td class="align-middle ps-3 ROL">{{ $item->nombre_rol }}</td>
                                                         <td class="align-middle ps-3 FECHA_CREADO"><span class="badge badge-phoenix fs--2 badge-phoenix-primary"><span class="badge-label">{{ $item->created_at }}</span><span class="ms-1" data-feather="package" style="height:12.8px;width:12.8px;"></span></span></td>
                                                         <td class="align-middle ps-3">
