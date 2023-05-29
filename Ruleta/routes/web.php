@@ -33,6 +33,8 @@ Route::post('/inicia-sesion', [AuthController::class, 'login'])->name('inicia-se
 
 // Ruleta
 Route::get('ruleta','RuletaController@index');
+Route::get('ruletaDatos','RuletaController@RuletaDatos');
+Route::post('ruleta/ninguno/{tnId}/{tnSumar}', 'RuletaController@HabiltarNinguno')->name('ruleta.ninguno');
 
 // Usuario
 Route::get('usuario','UsuarioController@index');
