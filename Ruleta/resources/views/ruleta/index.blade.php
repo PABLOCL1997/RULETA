@@ -14,8 +14,8 @@
         <style>
             #canvasContainer {
                 /*background-image: url(img/logo-sofia.jpg);
-                                                  background-repeat: no-repeat;
-                                                  background-position: center center;*/
+                                                          background-repeat: no-repeat;
+                                                          background-position: center center;*/
                 height: auto;
                 cursor: pointer;
                 margin: 0 auto;
@@ -196,35 +196,60 @@
             winningSegment = objRuleta.getIndicatedSegment();
             //SonidoFinal();
             //alert(winningSegment.text);
-            swal({
-                    title: " ¡    Felidades por tu premio    ! " + winningSegment.text + "",
+            if (winningSegment.text === 'Ninguno') {
+                swal({
+                        title: " ¡ Siga Participando ! ",
 
-                    imageUrl: "img/logo-sofia.jpg",
-                    showCancelButton: true,
-                    confirmButtonColor: "#e74c3c",
-                    confirmButtonText: "Guardar Premio",
-                    cancelButtonText: "Reintentar",
-                    closeOnConfirm: true,
-                    closeOnCancel: true
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
-                        //window.location.href = '/cliente_premiado/create/' + 1;
-                        document.getElementById('Aceptar').click();
-                    } else {
-                        /*$('#ListaElementos').val($('#ListaElementos').val().replace(winningSegment.text, ""));
-                        leerElementos();^*/
-
+                        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7GMzVZs9LtPnVU2zspMhA-FIbrbzatC1LUw&usqp=CAU",
+                        showCancelButton: true,
+                        confirmButtonColor: "#e74c3c",
+                        confirmButtonText: "Aceptar",
+                        cancelButtonText: "Reintentar",
+                        closeOnConfirm: true,
+                        closeOnCancel: true
+                    },
+                    function(isConfirm) {
+                        if (isConfirm) {
+                            document.getElementById('Aceptar').click();
+                        } else {}
+                        objRuleta.stopAnimation(false);
+                        objRuleta.rotationAngle = 0;
+                        objRuleta.draw();
+                        DibujarTriangulo();
+                        document.getElementById('bigButton').disabled = false; // Habilitar el botón aquí
+                        //bigButton.disabled = false;
                     }
-                    objRuleta.stopAnimation(false);
-                    objRuleta.rotationAngle = 0;
-                    objRuleta.draw();
-                    DibujarTriangulo();
-                    document.getElementById('bigButton').disabled = false; // Habilitar el botón aquí
-                    //bigButton.disabled = false;
-                }
-            );
+                );
+            } else {
+                swal({
+                        title: " ¡    Felidades por tu premio    ! " + winningSegment.text + "",
 
+                        imageUrl: "img/logo-sofia.jpg",
+                        showCancelButton: true,
+                        confirmButtonColor: "#e74c3c",
+                        confirmButtonText: "Guardar Premio",
+                        cancelButtonText: "Reintentar",
+                        closeOnConfirm: true,
+                        closeOnCancel: true
+                    },
+                    function(isConfirm) {
+                        if (isConfirm) {
+                            //window.location.href = '/cliente_premiado/create/' + 1;
+                            document.getElementById('Aceptar').click();
+                        } else {
+                            /*$('#ListaElementos').val($('#ListaElementos').val().replace(winningSegment.text, ""));
+                            leerElementos();^*/
+
+                        }
+                        objRuleta.stopAnimation(false);
+                        objRuleta.rotationAngle = 0;
+                        objRuleta.draw();
+                        DibujarTriangulo();
+                        document.getElementById('bigButton').disabled = false; // Habilitar el botón aquí
+                        //bigButton.disabled = false;
+                    }
+                );
+            }
         }
 
         function MensajePremiosAgotados() {
@@ -328,25 +353,34 @@
             var premios = <?php echo json_encode($laDatosView['premio']); ?>;
 
             /* ------------- Obtiene los campos de la columan CANTIDAD_ENTREGADO_DIARIO --------------- */
-            var cantidades = premios.map(function(premio) {
-                return premio.CANTIDAD_ENTREGADO_DIARIO;
+            var cantidades = premios.filter(function(premio) {
+                return premio.PREMIO_CONSUELO === 'NO'; // Filtra los elementos por estado 'H'
+            }).map(function(premio) {
+                return premio.CANTIDAD_ENTREGADO_DIARIO; // Obtiene la columna 'CANTIDAD_ENTREGADO_DIARIO'
             });
-            
+
+            var EstadoNinguno = premios.filter(function(premio) {
+                return premio.PREMIO_CONSUELO === 'SN'; // Filtra los elementos por estado 'SN'
+            });
+
             /* ------------- Realiza la suma Total de la columna CANTIDAD_ENTREGADO_DIARIO --------------- */
             var totalEntregado = cantidades.reduce(function(acumulador, valor) {
                 return acumulador + valor;
             }, 0);
+            /*var totalEntregado = premios.find(function(premio) {
+                return premio.PREMIO_CONSUELO === 'SI';
+            });   // totalEntregado % 5 === 0 */
             console.log(totalEntregado);
-            if (totalEntregado % 5 === 0) {
+            if (EstadoNinguno.length > 0) {
                 var premioNinguno = premios.find(function(premio) {
-                    return premio.NOMBRE === 'Ninguno';
+                    return premio.PREMIO_CONSUELO === 'SN';
                 });
                 if (premioNinguno) {
                     return premioNinguno.ID_PREMIO;
                 } else {
                     console.log('No se encontró el premio "Ninguno"');
                 }
-            }else{
+            } else {
                 var conteoPremios = {};
                 var limiteEntrega = {};
 
@@ -360,7 +394,7 @@
                         limiteEntrega[premio] = premios[i].TOTAL_MAX_ENTREGA;
                     }
                 }
-                
+
                 /* ------- Filtra los premios que estan disponibles ------ */
                 var premiosDisponibles = premios.filter(function(premio) {
                     return conteoPremios[premio.NOMBRE] < limiteEntrega[premio.NOMBRE];

@@ -63,6 +63,8 @@ class ClientePremiadoController extends Controller
         $user_logeado = session('user_logeado')[0]; // Datos usuario logeado
         $lnIdMercado = FacadesDB::select("SELECT u.id_mercado FROM users u WHERE u.id = $user_logeado->id");
         $lnIdMercado = $lnIdMercado[0]->id_mercado;
+
+
         try {
             FacadesDB::beginTransaction();
             $loCantEntreActual = FacadesDB::select("SELECT mp.CANTIDAD_ENTREGADO_DIARIO FROM MERCADO_PREMIO mp WHERE mp.ID_MERCADO = $lnIdMercado AND mp.ID_PREMIO = $request->ID_PREMIO");
@@ -71,6 +73,29 @@ class ClientePremiadoController extends Controller
                     ->where('ID_MERCADO', $lnIdMercado)
                     ->where('ID_PREMIO', $request->ID_PREMIO)
                     ->update(['CANTIDAD_ENTREGADO_DIARIO' => intval($loCantEntreActual[0]->CANTIDAD_ENTREGADO_DIARIO) + 1]);
+
+                $lnDatosNinguno = FacadesDB::select("SELECT SUM(MP.CANTIDAD_ENTREGADO_DIARIO) AS CANTIDAD_ENTREGADO_DIARIO  
+                                    FROM MERCADO_PREMIO MP INNER JOIN PREMIO P ON P.ID_PREMIO = MP.ID_PREMIO
+                                    WHERE P.ESTADO = 'H' AND MP.PREMIO_CONSUELO = 'NO' AND MP.ID_MERCADO = $lnIdMercado");
+
+                $lnTotalNinguno = FacadesDB::select("SELECT COUNT(MP.ID_MERCADO_PREMIO)  AS TOTAL_REGISTROS  
+                                    FROM MERCADO_PREMIO MP INNER JOIN PREMIO P ON P.ID_PREMIO = MP.ID_PREMIO
+                                    WHERE P.ESTADO = 'H' AND MP.PREMIO_CONSUELO = 'SN' AND MP.ID_MERCADO = $lnIdMercado");
+                                    //return $lnTotalNinguno;
+                if ($lnDatosNinguno[0]->CANTIDAD_ENTREGADO_DIARIO > 0 && $lnDatosNinguno[0]->CANTIDAD_ENTREGADO_DIARIO % 5 === 0) {
+                    if ($lnTotalNinguno[0]->TOTAL_REGISTROS > 0) {
+                        FacadesDB::table('MERCADO_PREMIO')
+                            ->where('ID_MERCADO', $lnIdMercado)
+                            ->where('PREMIO_CONSUELO', 'SN')
+                            ->update(['PREMIO_CONSUELO' => 'SI']);
+                    }else{
+                        FacadesDB::table('MERCADO_PREMIO')
+                        ->where('ID_MERCADO', $lnIdMercado)
+                        ->where('PREMIO_CONSUELO', 'SI')
+                        ->update(['PREMIO_CONSUELO' => 'SN']);
+                    }
+                    
+                }
                 if ($result > 0) {
                     $loClientePremiado = new ClientePremiado();
 
