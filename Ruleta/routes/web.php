@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UsuarioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
 // Auth
 Route::post('/validar-registro', [AuthController::class, 'register'])->name('validar-registro');
 Route::post('/inicia-sesion', [AuthController::class, 'login'])->name('inicia-sesion');
+Route::post('/submit-form', [UsuarioController::class, 'usuarioNuevo'])->name('submit-form');
 
 
 // Ruleta

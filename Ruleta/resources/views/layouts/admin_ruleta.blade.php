@@ -97,7 +97,7 @@
               <ul class="navbar-nav flex-column" id="navbarVerticalNav">
                 <li class="nav-item">
                   <!-- label-->
-                  @if(session('id_rol')[0] === 2)
+                  @if(session('id_rol') === 2 || session('id_rol') === 1)
                   <p class="navbar-vertical-label">ATENCION</p>
                   <hr class="navbar-vertical-line" /><!-- parent pages-->
                   <div class="nav-item-wrapper"><a class="nav-link label-1" href="/ruleta" role="button" data-bs-toggle="" aria-expanded="false">
@@ -107,7 +107,7 @@
                 </li>
                 <li class="nav-item">
                   <!-- label-->
-                  @if(session('id_rol')[0] === 3 || session('id_rol')[0] === 1)
+                  @if(session('id_rol') === 1)
                   <p class="navbar-vertical-label">ADMINISTRACION</p>
                   <hr class="navbar-vertical-line" /><!-- parent pages-->
                   <div class="nav-item-wrapper"><a class="nav-link label-1" href="/usuario" role="button" data-bs-toggle="" aria-expanded="false">
@@ -163,7 +163,7 @@
                   <div class="card position-relative border-0">
 
                     <div style="padding: 3px;" class="card-footer p-0 border-top">
-                      <div class="px-3"> <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="#!"> <span class="me-2" data-feather="log-out"> </span>Cerrar Sesión</a></div>
+                      <div class="px-3"> <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="{{asset('logout')}}"> <span class="me-2" data-feather="log-out"> </span>Cerrar Sesión</a></div>
                       
                     </div>
                   </div>
@@ -185,7 +185,7 @@
                       </div>
                     </div>
                     <div class="card-footer p-3 border-top">
-                      <div class="px-3"> <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="#!"> <span class="me-2" data-feather="log-out"> </span>Cerrar Sesión</a></div>
+                      <div class="px-3"> <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="{{asset('logout')}}"> <span class="me-2" data-feather="log-out"> </span>Cerrar Sesión</a></div>
                       <div class="my-2 text-center fw-bold fs--2 text-600"></div>
                     </div>
                   </div>
