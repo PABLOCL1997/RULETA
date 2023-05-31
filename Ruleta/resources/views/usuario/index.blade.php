@@ -13,7 +13,7 @@
                                         <div class="col-auto">
                                           <div class="d-md-flex justify-content-between">
                                             <div>
-                                            <button class="btn px-3 btn-phoenix-secondary" type="button" data-bs-toggle="modal" data-bs-target="#filterModal" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-user-plus text-dark" data-fa-transform="down-3"></span> NUEVO</button>
+                                            <a href="/crear-usuario"><button class="btn px-3 btn-phoenix-secondary" type="button" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-user-plus text-dark" data-fa-transform="down-3"></span> NUEVO</button></a>
                                           </div>
                                           </div>
                                         </div>
@@ -115,7 +115,10 @@
                                                         <td class="align-middle ps-3 FECHA_CREADO"><span class="badge badge-phoenix fs--2 badge-phoenix-primary"><span class="badge-label">{{ $item->created_at }}</span><span class="ms-1" data-feather="package" style="height:12.8px;width:12.8px;"></span></span></td>
                                                         <td class="align-middle ps-3">
                                                             <!--<a href="" class="btn btn-info" style="background-color: #FFD300;"><i class="fas fa-edit"></i></a>-->
-                                                            <!-- <a href="" class="btn btn-info"><i class="fas fa-edit"></i></a> -->
+                                                            <!-- <a href="javascript:void(0);" onclick="EditarUsuario({{ $item->id }})" class="btn btn-info"><i class="fas fa-edit"></i></a> -->
+
+                                                            <a href="{{ route('usuario.editar', $item->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                                            
                                                             <!-- <a href="" class="btn btn-danger"><i class="fas fa-trash"></i></a>   -->
                                                         </td>
                                                     </tr>
@@ -192,6 +195,39 @@
             }
         });
     });
+
+    // function EditarUsuario(id) {
+    //   console.log(id);
+    //   $.ajax({
+    //     url: '/editar-usuario',
+    //     type: "GET",
+    //     headers: {
+    //       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //     },
+    //     // dataType: 'json',
+    //     data: {id: id},
+    //     success: function(response) {
+    //       console.log(response);
+    //       html = response.message;
+    //       // $('#filterModal').modal('hide');
+    //       $('#alertaUser').prepend(html);
+    //       // ocultar alertaUser despues de 5 segundos
+    //       if (response.status == 'success') {
+    //         setTimeout(function() {
+    //           $('#filterModal').modal('hide');
+    //         }, 1500);
+    //       } else if (response.status == 'error') {
+    //         setTimeout(function() {
+    //           $('#alertaUser').empty();
+    //         }, 1500);
+    //       }
+
+    //     },
+    //     error: function(response) {
+    //       console.log(response);
+    //     }
+    //   });
+    // }
 
     </script>
 

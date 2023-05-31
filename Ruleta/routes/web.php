@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::view('/home', 'layouts/admin')->name('home');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::post('/submit-form', [UsuarioController::class, 'usuarioNuevo'])->name('submit-form');
+    Route::post('/submit-form-update', [UsuarioController::class, 'usuarioEditar'])->name('submit-form-update');
     
     // Ruleta
     Route::get('ruleta','RuletaController@index');
@@ -42,6 +43,10 @@ Route::middleware('auth')->group(function () {
     
     // Usuario
     Route::get('usuario','UsuarioController@index');
+    Route::get('crear-usuario','UsuarioController@crearUsuario');
+    // Route::get('editar-usuario','UsuarioController@editarUsuario');
+    Route::get('/usuario/{id}/editar', 'UsuarioController@editarUsuario')->name('usuario.editar');
+
     
     // Cliente Premiado
     Route::post('cliente_premiado/create', 'ClientePremiadoController@create')->name('cliente_premiado.create');
