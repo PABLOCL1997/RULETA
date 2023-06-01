@@ -52,5 +52,10 @@ Route::middleware('auth')->group(function () {
     Route::post('cliente_premiado/create', 'ClientePremiadoController@create')->name('cliente_premiado.create');
     Route::resource('cliente_premiado', 'ClientePremiadoController',['as' => 'cliente_premiado']);
     Route::post('cliente_premiado/anular/{tnId}', 'ClientePremiadoController@Anular')->name('cliente_premiado.Anular');
+
+    // Mercado Premio
+    Route::get('mercado_premio/insert', 'MercadoPremioController@Insert');
+    Route::get('mercado_premio/id', 'MercadoPremioController@Mercado');
+    Route::resource('mercado_premio', 'MercadoPremioController',['as' => 'mercado_premio']);
     
 });
