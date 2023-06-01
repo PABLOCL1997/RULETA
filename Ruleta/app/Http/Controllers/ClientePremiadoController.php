@@ -163,7 +163,7 @@ class ClientePremiadoController extends Controller
             $loClientePremiado->NRO_TICKET = $request->NRO_TICKET;
             $loClientePremiado->ID_MERCADO = $user_logeado->id_mercado;
             $loClientePremiado->ID_PREMIO = $request->ID_PREMIO;
-            $loClientePremiado->USER_CREACION = "admin";
+            $loClientePremiado->USER_CREACION = $user_logeado->name;
             $loClientePremiado->update();
             FacadesDB::commit();
         } catch (\Throwable $e) {

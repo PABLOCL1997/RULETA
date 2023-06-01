@@ -109,7 +109,7 @@
                   <div class="nav-item-wrapper"><a class="nav-link label-1" href="/cliente_premiado" role="button" data-bs-toggle="" aria-expanded="false">
                     <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="help-circle"></span></span><span class="nav-link-text-wrapper"><span class="nav-link-text">CLIENTE PREMIADO</span></span></div>
                     </a></div><!-- parent pages-->
-                  <div class="nav-item-wrapper"><a class="nav-link label-1" href="pages/notifications.html" role="button" data-bs-toggle="" aria-expanded="false">
+                  <div class="nav-item-wrapper"><a class="nav-link label-1" href="/mercado_premio" role="button" data-bs-toggle="" aria-expanded="false">
                       <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="shopping-cart"></span></span><span class="nav-link-text-wrapper"><span class="nav-link-text">MERCADO</span></span></div>
                     </a></div><!-- parent pages-->
                   <div class="nav-item-wrapper"><a class="nav-link label-1" href="pages/members.html" role="button" data-bs-toggle="" aria-expanded="false">
